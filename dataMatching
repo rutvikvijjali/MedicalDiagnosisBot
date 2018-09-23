@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Sep 22 10:21:11 2018
+
+@author: rutvik
+"""
+import pandas as pd
+from fuzzywuzzy import fuzz
+from nltk.stem import WordNetLemmatizer
+
+dataframe = pd.read_excel('Med-TechChatbotDataset.xlsx') 
+
+file = "stopwords.txt"
+stoplist = []
+with open(file) as f:
+    lines = f.readlines()
+    lines = [x.strip() for x in lines]
+    for line in lines:
+        stoplist.append(line)
+
+'''words = []
+def applyStopwords(s):
+    words = s.split()
+    for words not in stoplist:'''
+        
+
+dataset = []
+for i in dataframe.index:
+    j = 1
+    symfinal = []
+    disease = dataframe.loc[i,'Disease']
+    while j<1023:
+        if(dataframe.loc[i,'Symptoms.'+str(j)]==dataframe.loc[i,'Symptoms.'+str(j)]):
+            symfinal.append(dataframe.loc[i,'Symptoms.'+str(j)])
+        else:
+            break
+        j += 1
+        
+    dataset.append([disease,symfinal])
+
+word_net = WordNetLemmatizer()
+for i in range(len(dataset)):
+    sym = []
+    for j in dataset[i][1]:
+        words = j.split()
+        for word in words:
+            if word in stoplist:
+                words.remove(word)
+            word = word_net.lemmatize(word)
+        word = " ".join(words)
+        sym.append(word)
+    dataset[i][1] = word
+
+
+
+fuzz.ratio('Cancer','Blood Cancer')

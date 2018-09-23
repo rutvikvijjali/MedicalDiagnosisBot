@@ -1,0 +1,36 @@
+{"intents": [
+  {"tag": "greeting",
+    "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day","Hey"],
+    "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+    "context_set": ""
+  },
+  {"tag": "goodbye",
+    "patterns": ["Bye", "See you later", "Goodbye"],
+    "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+  },
+  {"tag": "thanks",
+    "patterns": ["Thanks", "Thank you", "That's helpful"],
+    "responses": ["Happy to help!", "Any time!", "My pleasure"]
+  },
+  {"tag": "danger",
+    "patterns": ["I'm bleeding to death", "I think I'll die", "I am having a heart attack" ],
+    "responses": ["That sounds dangerous, dial 101", "Scream for help!"]
+  },
+  {"tag": "help",
+    "patterns": ["I need help?", "I am sick?", "I am scared?" , "I don't know what to do", "Please help me" ],
+    "responses": ["Don't worry, let's diagnose your possible ailment", "Relax, maybe you're overthinking, tell me what's the problem","Let me know what your problem is and cool down.", "Healthcare is far too advanced, infact there is a 94.2% chance that your ailment is not life threatning."]
+  },
+  {"tag": "symptoms",
+    "patterns": ["I feel dizzy", "My stomach is aching", "My head is spinning","My Back hurts",  "I can't breathe", "There is a huge lump on my body", "My stomach is paining","My heart is burning", "I feel nausea","My skin is pale","I feel Weak","I can't walk","I have palpitations" ,"I can't sleep","I have anxiety issues","I suffer from a syndrome","I think I have problems with my body","My tongue is dry","I feel cold"],
+    "responses": ["Let me try to analyse your symptoms and help you that way", "Don't worry, let me check what's up with you"]
+  },
+   {"tag": "additional_symptoms",
+    "patterns": ["Bleeding nose", "Cold", "Fever","Headache","dry eyes","sneezing","vaginal bleeding","body pains","drowseyness,vomitings,diarrhoea,pains"],
+    "responses": ["Thank for that, could we get more symptoms", "Could I get some more symptoms please? I am having a tough time."]
+  },
+  {"tag": "end",
+    "patterns": ["Thanks for the help", "Thank You", "I'am releived"],
+    "responses": ["Will that be all, or you need more help?", "Are you happy with performance?"]
+  }
+]
+}
